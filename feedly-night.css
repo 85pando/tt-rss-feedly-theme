@@ -805,7 +805,7 @@ a:hover {
 #feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child > .dijitTreeRow {
 	margin: 0 0 7px;
 	padding: 13px 6px;
-	border-bottom: 1px solid #d4d4d4;
+	border-bottom: 1px solid #000;
 }
 #feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child {
 	margin-bottom: 26px;
@@ -898,7 +898,7 @@ a:hover {
 	position: absolute;
 	right: 0;
 	left: 0;
-	border-top: 1px solid #d4d4d4;
+	border-top: 1px solid #000;
 	content: "";
 }
 #floatingTitle .titleWrap:before {
@@ -1227,6 +1227,7 @@ div.articleNote {
 .cdm,
 .hl {
 	position: relative;
+	
 }
 .cdm.expanded.active,
 .cdm.expandable.active {
