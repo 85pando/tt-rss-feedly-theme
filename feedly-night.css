@@ -1,3 +1,10 @@
+/* supports-version:15.7 */
+
+/* @override 
+	http://localhost:8888/tt-rss/themes/feedlynight.css?1447602514
+	http://localhost:8888/tt-rss/themes/feedlynight.css?1447603085
+*/
+
 @import url(feedly/claro-mod.min.css);
 
 /*
@@ -79,19 +86,38 @@ div.articleNote div.noteEdit {
 	cursor : pointer;
 }
 
-/* @142 */
+/* @146 */
+#notify.visible {
+	transform: translate(0, -35px);
+	-webkit-transform: translate(0, -35px);
+	-o-transform: translate(0, -35px);
+	-moz-transform: translate(0, -35px);
+}
+
+#notify.visible {
+	transform: translate(0, -35px);
+	-webkit-transform: translate(0, -35px);
+	-o-transform: translate(0, -35px);
+	-moz-transform: translate(0, -35px);
+}
+
 #notify {
-	bottom : 10px;
-	right : 20px;
-	border-width : 1px;
+	bottom : -35px;
+	right : 0px;
+	height : 20px;
+	left : 0px;
+	border-width : 1px 0px 0px 0px;
 	border-style : solid;
-	position : absolute;
+	position : fixed;
 	font-size : 12px;
 	z-index : 99;
-	max-width : 200px;
-	min-width : 100px;
 	padding : 5px;
-	-width : 200px;
+	box-shadow : 0px -2px 2px rgba(0,0,0,0.1);
+
+	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
 }
 
 #notify img {
@@ -118,17 +144,17 @@ div.articleNote div.noteEdit {
 	background-color : #fff7d5;
 }
 
-.notify.progress {
+.notify.notify_progress {
 	border-color : #d7c47a;
 	background-color : #fff7d5;
 }
 
-.notify.info {
+.notify.notify_info {
 	border-color : #88b0f0;
 	background-color : #ecf4ff;
 }
 
-.notify.error {
+.notify.notify_error {
 	background-color : #ffcccc;
 	border-color : #ff0000;
 }
@@ -403,6 +429,8 @@ img,
 #ttrssMain,
 #ttrssPrefs {
 	overflow: hidden;
+	max-height: 100%;
+	background-color: #161616;
 }
 #main {
 	width: auto;
@@ -441,7 +469,7 @@ html {
 	color: #ccc;
 }
 a {
-	color: #5b4;
+	color: #994d00;
 	text-decoration: none;
 }
 a:hover {
@@ -456,9 +484,15 @@ a:hover {
 
 /* STYLING ************************************************************/
 
+#notify {
+	line-height: 1;
+}
+
+
 #toolbar {
 	padding: 12px 34px 0 32px;
 	z-index: 3;
+
 }
 #main-toolbar {
 	padding: 0;
@@ -482,17 +516,25 @@ a:hover {
 	float: left;
 	margin: 1px 0 0 12px;
 }
-#headlines-toolbar .main > * {
+
+#headlines-toolbar .main > .sel_links {
+	font-size: 0;
+	color: #fff;
+}
+
+#headlines-toolbar .main > *,
+#headlines-toolbar .main > .sel_links a {
+
 	color: #b2b2b2;
 	vertical-align: middle;
 	font-size: 12px;
 }
-#headlines-toolbar .main > a {
+#headlines-toolbar .main > .sel_links a {
 	margin: 0 10px 0 2px;
 	text-decoration: none;
 	transition: color .2s;
 }
-#headlines-toolbar .main > a:hover {
+#headlines-toolbar .main > .sel_links a:hover {
 	color: #444;
 }
 #ttrssMain #main {
@@ -512,7 +554,11 @@ a:hover {
 #toolbar {
 	overflow: visible; /* fixes transitions of feed tree collapse button */
 	background: rgb(23,23,23);
+	
 }
+
+
+
 #main .dijitSplitterHover,
 #main .dijitSplitterActive {
 	background: transparent;
@@ -557,7 +603,7 @@ a:hover {
 	z-index: 100;
 	width: 100%;
 	height: 100%;
-	background: #fff;
+	background: #161616;
 	text-align: center;
 }
 #overlay:before {
@@ -685,7 +731,7 @@ a:hover {
 	transition: color .2s;
 }
 #feeds-holder .dijitTreeRowSelected {
-	color: #222;
+	color: #d1d0d2;
 	transition: none;
 }
 #feeds-holder .dijitTreeLabel.Unread {
@@ -838,10 +884,11 @@ a:hover {
 #floatingTitle {
 	position: absolute;
 	top: 1px;
-	right: 34px;
+	right: -26px;
 	left: 26px;
 	z-index: 4;
 	background: rgb(42,42,42);
+
 }
 #floatingTitle .title {
 	color: inherit;
@@ -866,6 +913,10 @@ a:hover {
 	margin: 0 0 -1px;
 	border: 0 solid #eee;
 	border-width: 1px 0;
+}
+
+div.cdmHeader {
+	
 }
 #floatingTitle,
 .cdm.expandable:not(.active) .cdmHeader,
@@ -1027,7 +1078,7 @@ a:hover {
 .hl.marked {
 	z-index: 2;
 	border-color: #bbe1b6;
-	background: #eefae9;
+	background: #353834;
 }
 .cdm.expandable.published:not(.active),
 .hl.published {
@@ -1088,6 +1139,18 @@ a:hover {
 	-webkit-order: 4;
 	order: 4;
 }
+
+#headlines-frame.wide + #content-insert .postReply {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+#headlines-frame.wide + #content-insert .postContent {
+	flex: 1;
+	overflow: auto;
+}
+
 
 /* articles - expanded */
 .cdm.expandable.active,
@@ -1192,7 +1255,7 @@ div.articleNote {
 .hl,
 .hl a,
 .hl.Unread .contentPreview {
-	color: #909090;
+	color: #cfcecf;
 }
 #floatingTitle.Unread .title,
 .cdm.Unread .title,
@@ -1244,7 +1307,7 @@ div.articleNote {
 	border: 1px solid rgba(0,0,0,.033);
 	border-radius: 99px;
 	background: rgba(0,0,0,.1);
-	color: #444;
+	color: #a2a2a4;
 	line-height: 1;
 }
 .cdmContentInner {
@@ -1395,7 +1458,7 @@ div.articleNote {
 .cdmContentInner td,
 .postContent td {
 	padding: 0 .5em;
-	border: 1px solid #ddd;
+	
 }
 .cdmContentInner th,
 .postContent th {
