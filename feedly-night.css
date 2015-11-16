@@ -1,8 +1,11 @@
 /* supports-version:15.7 */
 
+
 /* @override 
 	http://localhost:8888/tt-rss/themes/feedlynight.css?1447602514
 	http://localhost:8888/tt-rss/themes/feedlynight.css?1447603085
+	http://localhost:8888/tt-rss/themes/feedly-night.css?1447604716
+	http://localhost:8888/tt-rss/themes/feedly-night.css?1447668905
 */
 
 @import url(feedly/claro-mod.min.css);
@@ -416,7 +419,7 @@ textarea {
 .claro .dijitSplitContainer-dijitContentPane,
 .claro .dijitBorderContainer-dijitContentPane {
 	padding: 0;
-}
+	}
 img,
 .claro .dijitSplitContainer-child,
 .claro .dijitBorderContainer-child {
@@ -469,7 +472,7 @@ html {
 	color: #ccc;
 }
 a {
-	color: #994d00;
+	color: #feffff;
 	text-decoration: none;
 }
 a:hover {
@@ -492,7 +495,20 @@ a:hover {
 #toolbar {
 	padding: 12px 34px 0 32px;
 	z-index: 3;
+	border-bottom: 3px solid #161616;
+}
 
+table.dijitReset.dijitMenuTable {
+	background-color: #222;
+	
+}
+
+div.dijitReset.dijitArrowButtonInner {
+		background-color: #222;
+}
+
+.dijitReset.dijitMenuItemLabel {
+	color: #d5d5d5;
 }
 #main-toolbar {
 	padding: 0;
@@ -592,6 +608,10 @@ a:hover {
 #main #content-wrap .dijitDropDownButton .dijitArrowButtonInner {
 	height: 14px;
 }
+
+span.dijitReset.dijitInline.dijitArrowButtonInner {
+	background-color: #222;
+}
 #main_toolbar_form > * {
 	margin: 0 -3px 0 5px;
 }
@@ -621,6 +641,7 @@ a:hover {
 #overlay_inner .dijitProgressBar {
 	margin: -10px 0;
 	border: 1px solid #d8d8d8;
+	background-color: #424242;
 }
 #overlay_inner .dijitProgressBarFull {
 	border: 0;
@@ -629,8 +650,9 @@ a:hover {
 	background: #e5e5e5;
 }
 #overlay_inner .dijitProgressBarLabel {
-	color: #444;
+	color: #000;
 	font-weight: bold;
+	background-color: #000;
 }
 .labelColorIndicator,
 .labelColorIndicator2,
@@ -834,7 +856,7 @@ a:hover {
 #feed_title {
 	font-weight: bold;
 	font-size: 13px;
-	color: #444;
+	color: #d6d5d7;
 }
 #feed_title a {
 	color: inherit;
@@ -1967,3 +1989,8 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 	border-left-color: #ccc;
 	content: "";
 }
+
+input.dijitReset.dijitInputField.dijitArrowButtonInner {
+	background-color: #424242;
+}
+
