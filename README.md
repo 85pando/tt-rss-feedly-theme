@@ -3,6 +3,12 @@ tt-rss-feedly-theme
 
 Feedly theme for [Tiny Tiny RSS](http://tt-rss.org/redmine/projects/tt-rss/wiki) 1.15 or newer.
 
+Contains:
+
+* `feedly.css` light, feedly inspired design. (Original)
+* `feedly-night.css` light, feedly inspired design with dark sidebar. (via [fluaten](https://github.com/fluaten/tt-rss-feedly-theme) )
+* `feedly-dark.css` dark, feedly inspired desin. (modified from [fluaten](https://github.com/fluaten/tt-rss-feedly-theme), inspired by [txtd](https://github.com/txtd/tt-rss-feedly-theme-dark) )
+
 Use the [legacy branch](https://github.com/levito/tt-rss-feedly-theme/tree/legacy) for TT-RSS 1.11 or older.
 
 Use the [branch v1.12](https://github.com/levito/tt-rss-feedly-theme/tree/v1.12) if you use version 1.12 up to 1.14.
@@ -27,7 +33,7 @@ Install-steps (If you did not find the description on the [TT-RSS Homepage](http
 
 5. Go into your TT-RSS preferences and select the feedly-theme.
 
-## Screenshots
+## Screenshots (todo: add night & dark screenshots)
 
 ![expandable](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-expandable.png?130826)
 
